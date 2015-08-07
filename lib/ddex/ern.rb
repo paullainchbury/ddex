@@ -91,6 +91,7 @@ module DDEX
 
       doc   = parse(xml, options)
       ver   = options[:version] || doc.root[VERSION_ATTR]
+      ver   = "ern/37" if ver == "ern/37D2" # Treat 37D2 as if it were 37
       klass = load_version(ver)
 
       begin
